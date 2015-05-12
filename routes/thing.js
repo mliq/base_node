@@ -16,7 +16,8 @@ router.post('/', function (req, res, next) {
     var thing = new Thing();
     thing.name.first = "Space";
     thing.name.last = "Ghost";
-
+    console.log(req.body);
+    thing.age = req.body.age;
     Thing.create(thing, function (err, post) {
         res.json(post);
     });
